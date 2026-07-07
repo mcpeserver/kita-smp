@@ -15,10 +15,11 @@ import SocialMedia from './components/SocialMedia';
 import CTAPurchasing from './components/CTAPurchasing';
 import Footer from './components/Footer';
 
+// Import images as ES modules so Vite can compile and bundle them with hashes
+import logoUrl from './assets/images/kita_smp_logo_1783444949864.jpg';
+import bgUrl from './assets/images/kita_smp_bg_1783444966507.jpg';
+
 export default function App() {
-  // Absolute URLs resolved by Vite during development and production
-  const logoUrl = "/src/assets/images/kita_smp_logo_1783444949864.jpg";
-  const bgUrl = "/src/assets/images/kita_smp_bg_1783444966507.jpg";
 
   return (
     <div className="relative min-h-screen bg-bg text-body-text font-sans antialiased selection:bg-primary selection:text-white noise-overlay">
