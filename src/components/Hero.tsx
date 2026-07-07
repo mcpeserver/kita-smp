@@ -39,7 +39,7 @@ export default function Hero({ logoUrl, bgUrl }: HeroProps) {
       </div>
 
       {/* Floating Magic Orbs in Background */}
-      <div className="absolute inset-0 pointer-events-none z-1">
+      <div className="hidden md:block absolute inset-0 pointer-events-none z-1">
         <motion.div
           animate={{
             y: [0, -40, 0],

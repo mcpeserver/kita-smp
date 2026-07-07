@@ -78,7 +78,7 @@ export default function Header({ logoUrl }: HeaderProps) {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex flex-col"
     >
       {/* Premium Developer Announcement Banner */}
-      <div className="w-full bg-gradient-to-r from-[#0d0b18]/95 via-[#8B3DFF]/15 to-[#00F0FF]/10 border-b border-white/5 py-2 px-4 text-white relative z-50 transition-all">
+      <div className="hidden md:block w-full bg-gradient-to-r from-[#0d0b18]/95 via-[#8B3DFF]/15 to-[#00F0FF]/10 border-b border-white/5 py-2 px-4 text-white relative z-50 transition-all">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           {/* Left Block: Dynamic Badge & Developer Core Info */}
           <div className="flex items-center gap-2.5 text-[11px] sm:text-xs">
@@ -184,73 +184,8 @@ export default function Header({ logoUrl }: HeaderProps) {
             </button>
           </nav>
 
-          {/* Header Right Actions (Developed Card + Button) */}
+          {/* Header Right Actions (Button) */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Developed By Widget */}
-            <div className="relative">
-              <button
-                onClick={() => setShowDevDropdown(!showDevDropdown)}
-                onMouseEnter={() => setShowDevDropdown(true)}
-                onMouseLeave={() => setShowDevDropdown(false)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface/50 border border-white/8 hover:border-primary/40 text-xs text-white/90 font-medium transition-all cursor-pointer"
-                aria-label="Developer Information"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                <span>Developed by <strong className="text-accent">{devData?.name || "Ran Dev"}</strong></span>
-                <ChevronDown size={14} className={`transition-transform duration-200 ${showDevDropdown ? 'rotate-180' : ''}`} />
-              </button>
-
-              {/* Dev Dropdown Content */}
-              {showDevDropdown && devData && (
-                <div
-                  onMouseEnter={() => setShowDevDropdown(true)}
-                  onMouseLeave={() => setShowDevDropdown(false)}
-                  className="absolute right-0 top-full mt-2 w-64 p-4 rounded-2xl bg-card border border-white/10 shadow-2xl z-50 animate-float"
-                >
-                  <div className="mb-3 pb-2 border-b border-white/5">
-                    <p className="text-[10px] uppercase tracking-wider text-body-text/60">Developer</p>
-                    <h4 className="text-sm font-semibold text-white">{devData.name}</h4>
-                  </div>
-                  
-                  <ul className="space-y-2.5 text-xs">
-                    <li>
-                      <a
-                        href={`https://wa.me/${devData.contact.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-body-text hover:text-accent transition-colors"
-                      >
-                        <Phone size={14} className="text-primary" />
-                        <span>WhatsApp: {devData.contact.whatsapp}</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={devData.website.portfolio}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-body-text hover:text-accent transition-colors"
-                      >
-                        <Globe size={14} className="text-primary" />
-                        <span className="truncate">Server Lain / Portfolio</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={devData.community.discord}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-body-text hover:text-accent transition-colors"
-                      >
-                        <MessageCircle size={14} className="text-primary" />
-                        <span>Discord Community</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-
             {/* Gabung Sekarang Button */}
             <button
               onClick={() => handleScrollTo('#server-address')}
@@ -263,16 +198,6 @@ export default function Header({ logoUrl }: HeaderProps) {
 
           {/* Mobile Hamburger Menu Toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            {/* Dev Small Indicator Card for Mobile */}
-            {devData && (
-              <button
-                onClick={() => handleScrollTo('#developer')}
-                className="px-2.5 py-1 rounded-lg bg-surface/40 border border-white/5 text-[10px] text-white/80"
-              >
-                Dev: <span className="text-accent">{devData.name}</span>
-              </button>
-            )}
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl bg-surface border border-white/8 text-white focus:outline-none focus:ring-2 focus:ring-primary"
