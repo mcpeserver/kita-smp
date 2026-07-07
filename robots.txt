@@ -1,0 +1,57 @@
+# ==========================================
+# ROBOTS.TXT FOR KITA SMP MINECRAFT INDONESIA
+# Optimized for SEO, Performance, and Security
+# ==========================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Protect bandwidth and content from aggressive AI scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ByteDance
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: magpie-crawler
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Standard Search Engines are fully welcomed
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://kitasmp.com/sitemap.xml

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-pixel: "Silkscreen", monospace;
+  
+  --color-primary: #8B3DFF;
+  --color-secondary: #C44DFF;
+  --color-accent: #00D7FF;
+  --color-bg: #0D0B18;
+  --color-surface: #18142B;
+  --color-card: #211A36;
+  --color-border-custom: rgba(255, 255, 255, 0.08);
+  --color-heading: #FFFFFF;
+  --color-body-text: #C7CAD6;
+  --color-success-custom: #42D37C;
+  --color-warning-custom: #FFCB57;
+  --color-danger-custom: #FF5C6A;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+  --animate-dragon-fly: dragon-fly 20s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 45s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+  @keyframes dragon-fly {
+    0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+    33% { transform: translate(25px, -15px) scale(1.03) rotate(1deg); }
+    66% { transform: translate(-15px, 10px) scale(0.97) rotate(-1deg); }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+/* Custom Utilities & Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #0D0B18;
+  color: #C7CAD6;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0B18;
+}
+::-webkit-scrollbar-thumb {
+  background: #211A36;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B3DFF;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(24, 20, 43, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(33, 26, 54, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(33, 26, 54, 0.55);
+  border-color: rgba(139, 61, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(139, 61, 255, 0.2);
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.015;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 10;
+}
+
+/* Glowing texts */
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(139, 61, 255, 0.5);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 215, 255, 0.5);
+}

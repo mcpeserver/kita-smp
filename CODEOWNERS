@@ -1,0 +1,4 @@
+# CODEOWNERS KITA SMP Landing Page
+# Menentukan penanggung jawab peninjauan perubahan kode.
+
+*       @mcpeserver @randev
